@@ -1,19 +1,22 @@
 language: php
 
-php:
-  - 7.0
-  - 7.1
-  - 7.2
-
-sudo: false
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.2
+    - php: 7.3
+    - php: 7.4
+    - php: nightly
 
 cache:
   directories:
     - $HOME/.composer/cache
 
-before_script:
+before_install:
   - travis_retry composer self-update
-  - travis_retry composer update --no-interaction --prefer-dist
+
+install:
+  - travis_retry composer install --prefer-dist --no-interaction --no-suggest
 
 script:
   - vendor/bin/phpunit
