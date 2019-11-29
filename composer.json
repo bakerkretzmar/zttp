@@ -1,5 +1,5 @@
 {
-    "name": "kitetail/zttp",
+    "name": "bakerkretzmar/zttp",
     "description": "A developer-experience focused HTTP client, optimized for most common use cases.",
     "keywords": ["http", "guzzle"],
     "license": "MIT",
@@ -22,8 +22,5 @@
         "files": [
             "src/Zttp.php"
         ]
-    },
-    "scripts": {
-        "test": "vendor/bin/phpunit"
     }
 }
